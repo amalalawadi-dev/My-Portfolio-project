@@ -216,7 +216,7 @@ body {
 .hero-section .myImage-div {
     width:90%;
     max-width:300px;
-    height:auto;
+    height:auto; 
     opacity: 0;
     animation: imageZoomIn 3s ease 0.6s forwards;
 }
@@ -236,9 +236,9 @@ body {
 .hero-section .myImage-div .my-image {
     width:100%;
     height:auto;
-    /* border-radius:40px; 
-    border:2px solid var(--text-color);  */
-    /* box-shadow: 0 10px 300px var(--secondary-color); */
+    border-radius:40px; 
+    border:2px solid var(--secondary-color);  
+    box-shadow: 0 10px 20px var(--secondary-color);
 }
 
 .hero-section .view-button {

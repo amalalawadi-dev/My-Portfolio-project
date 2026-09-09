@@ -1,4 +1,4 @@
-// create backgrond-video:
+// // create backgrond-video:
 // let backgroundVideo = document.createElement("video");
 // backgroundVideo.classList.add("background-video");
 // backgroundVideo.autoplay = true;
