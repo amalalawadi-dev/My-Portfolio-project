@@ -70,7 +70,7 @@ myImageDiv.classList.add("myImage-div");
 let myImage = document.createElement("img");
 myImage.classList.add("my-image");
 myImageDiv.appendChild(myImage);
-myImage.src = "Images/hero-image.png";
+myImage.src = "Images/hero-Image.jpeg";
 let viewButton  = document.createElement("button");
 viewButton.classList.add("view-button");
 let viewButtonContent = document.createTextNode("View My Work"); 
