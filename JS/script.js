@@ -15,7 +15,6 @@ let navBar = document.createElement("nav");
 navBar.classList.add("navbar");
 let myName = document.createElement("h1");
 myName.classList.add("my-name");
-// let myNameContent = document.createTextNode("AMAL");
 let spanChar1 = document.createElement("span");
 spanChar1.classList.add("char-one");
 spanChar1.innerText = "A";
@@ -32,7 +31,6 @@ let spanChar4 = document.createElement("span");
 spanChar4.classList.add("char-four");
 spanChar4.innerText = "L";
 myName.appendChild(spanChar4);
-// myName.appendChild(myNameContent);
 navBar.appendChild(myName);
 let navButton = document.createElement("button");
 navButton.classList.add("nav-button");
@@ -40,10 +38,60 @@ let barIcon = document.createElement("i");
 barIcon.classList.add("fa-solid","fa-bars");
 navButton.appendChild(barIcon);
 navBar.appendChild(navButton);
-document.body.appendChild(navBar); 
+document.body.appendChild(navBar);
+// create side bar :
+let sideBar = document.createElement("nav");
+sideBar.classList.add("side-bar");
+let homeLink = document.createElement("a");
+homeLink.href = "#HOME";
+homeLink.onclick = function(){
+    sideBar.classList.toggle("apparent");
+};
+let homeLinkContent = document.createTextNode("HOME");
+homeLink.appendChild(homeLinkContent);
+let aboutLink = document.createElement("a");
+aboutLink.href = "#ABOUT";   
+aboutLink.onclick = function(){
+    sideBar.classList.toggle("apparent"); 
+};
+let aboutLinkContent = document.createTextNode("ABOUT");
+aboutLink.appendChild(aboutLinkContent);
+let skillsLink = document.createElement("a");
+skillsLink.href = "#SKILLS";
+skillsLink.onclick = function(){
+    sideBar.classList.toggle("apparent");
+};
+let skillsLinkContent = document.createTextNode("SKILLS");
+skillsLink.appendChild(skillsLinkContent);
+let projectsLink = document.createElement("a");
+projectsLink.href = "#PROJECTS";
+projectsLink.onclick = function(){
+    sideBar.classList.toggle("apparent");
+}
+let projectsLinkContent = document.createTextNode("PROJECTS");
+projectsLink.appendChild(projectsLinkContent);
+let contactLink = document.createElement("a");
+contactLink.href = "#CONTACT";
+contactLink.onclick = function(){
+    sideBar.classList.toggle("apparent");
+}
+contactLink.classList.add("contact-link");
+let contactLinkContent = document.createTextNode("CONTACT");
+contactLink.appendChild(contactLinkContent);
+sideBar.appendChild(homeLink);
+sideBar.appendChild(aboutLink);
+sideBar.appendChild(skillsLink);
+sideBar.appendChild(projectsLink);
+sideBar.appendChild(contactLink);
+document.body.prepend(sideBar);
+navButton.onclick = function(){
+    sideBar.classList.toggle("apparent"); 
+}
+
 //create hero section:
 let heroSection = document.createElement("section");
 heroSection.classList.add("hero-section");
+heroSection.id = "HOME";
 let textDiv = document.createElement("div");
 textDiv.classList.add("text-div");
 let mainTitle = document.createElement("h1");
@@ -70,7 +118,7 @@ myImageDiv.classList.add("myImage-div");
 let myImage = document.createElement("img");
 myImage.classList.add("my-image");
 myImageDiv.appendChild(myImage);
-myImage.src = "Images/hero-Image.jpeg";
+myImage.src = "Images/hero-imag.jpeg";
 let viewButton  = document.createElement("button");
 viewButton.classList.add("view-button");
 let viewButtonContent = document.createTextNode("View My Work"); 
@@ -81,6 +129,7 @@ heroSection.appendChild(viewButton);
 document.body.appendChild(heroSection);
 //create about section:
 let aboutSection = document.createElement("section");
+aboutSection.id = "ABOUT";
 aboutSection.classList.add("about-section");
 let aboutTitle = document.createElement("h2");
 aboutTitle.classList.add("about-title");
@@ -95,6 +144,7 @@ aboutSection.appendChild(aboutParagraph);
 document.body.appendChild(aboutSection);
 // create skills section:
 let skillsSection = document.createElement("section");
+skillsSection.id = "SKILLS";
 skillsSection.classList.add("skills-section");
 let sectionTitle = document.createElement("h2");
 let sectionTitleContent = document.createTextNode("My Skills");
@@ -155,6 +205,7 @@ skillsSection.appendChild(skillsContainer);
 document.body.appendChild(skillsSection);
 // create projects section:
 let projectsSection = document.createElement("section");
+projectsSection.id = "PROJECTS";
 projectsSection.classList.add("project-section");
 let projectsSectionTitle = document.createElement("h2");
 projectsSectionTitle.classList.add("section-title");
@@ -202,7 +253,8 @@ projectsSection.appendChild(projectsSectionTitle);
 projectsSection.appendChild(cardsProjectsContainer);
 document.body.appendChild(projectsSection);
 // create contact section:
-let contactSection = document.createElement("section")
+let contactSection = document.createElement("section");
+contactSection.id = "CONTACT";
 contactSection.classList.add("contact-section");
 let contactSectionTitle = document.createElement("h2");
 let contactSectionTitleContent = document.createTextNode("Contact Me");
