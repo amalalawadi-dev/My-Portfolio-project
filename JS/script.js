@@ -316,6 +316,9 @@ contactButton.classList.add("contact-button");
 let contactButtonContent = document.createTextNode("Send Message");
 contactButton.appendChild(contactButtonContent);
 form.appendChild(contactButton);
+let errorMessage = document.createElement("div");
+errorMessage.classList.add("error-message");
+form.appendChild(errorMessage);
 formSection.appendChild(form);
 let backButton = document.createElement("button");
 backButton.classList.add("back-button");
@@ -329,7 +332,6 @@ window.onscroll = function(){
         backButton.style.display = "none";
     }
 }
-
 backButton.onclick = function(){
     window.scrollTo({
         top:0,
@@ -337,6 +339,59 @@ backButton.onclick = function(){
         behavior:"smooth", 
     });  
 };
+let namePattern = /^[A-Za-z ]+$/;
+let emailPattern = /^[A-Za-z0-9._-]+@[A-Za-z0-9._-]+\.[A-Za-z]{2,}$/;
+form.addEventListener("submit",function(event){
+    event.preventDefault();
+    if(nameInput.value.trim() == "" && emailInput.value.trim() == "" && messageArea.value.trim() == "" ){
+        errorMessage.innerText = "Please fill in all fields before submitting the form";
+        errorMessage.style.display = "flex";
+        return;
+    }
+    if(nameInput.value.trim() == ""){
+        errorMessage.innerText = "Please Enter Your Name";
+        errorMessage.style.display = "flex";
+        return;
+    }
+    if(!namePattern.test(nameInput.value.trim())){
+        errorMessage.innerText = "Please Enter a Valid Name";
+        errorMessage.style.display = "flex";
+        return;
+    }
+    
+    if(emailInput.value.trim() == ""){
+        errorMessage.innerText = "Please Enter Your Email";
+        errorMessage.style.display = "flex";
+        return;
+    }
+    if(!emailPattern.test(emailInput.value.trim())){
+        errorMessage.innerText = "Please Enter a Valid Email";
+        errorMessage.style.display = "flex";
+        return
+    }
+
+    if(messageArea.value.trim() == ""){
+        errorMessage.innerText = "Please Enter Your Message";
+        errorMessage.style.display = "flex";
+        return;
+    }
+
+    if(messageArea.value.length < 10){
+        errorMessage.innerText = "Please enter a longer message";
+        errorMessage.style.display = "flex";
+        return;
+    }
+
+    else{
+        errorMessage.innerText = "Your message has been sent successfully!";
+        errorMessage.style.display = "flex";
+        return;
+    }
+}); 
+    
+
+
+
 
 contactSection.appendChild(contactSectionTitle);
 contactSection.appendChild(contactSectionDesc);
@@ -359,14 +414,23 @@ footerContainer.appendChild(footerParagraph);
 let footerSocialLinksContainer = document.createElement("div");
 footerSocialLinksContainer.classList.add("links-container")
 let socialLinkLinkedIn = document.createElement("a");
+socialLinkLinkedIn.onclick = function(){
+    location.href = "https://www.linkedin.com/in/amalalawadi-dev";
+};
 let linkedInIcon = document.createElement("i");
 linkedInIcon.classList.add("fa-brands", "fa-linkedin");
 socialLinkLinkedIn.appendChild(linkedInIcon);
 let socialLinkGitHub = document.createElement("a");
+socialLinkGitHub.onclick = function(){
+    location.href = "https://github.com/amalalawadi-dev";
+};
 let gitHubIcon = document.createElement("i");
 gitHubIcon.classList.add("fa-brands", "fa-github");
 socialLinkGitHub.appendChild(gitHubIcon);
 let socialLinkEmail = document.createElement("a");
+socialLinkEmail.onclick = function(){
+    location.href = "mailto:amalalawadi2001@gmail.com";
+};
 let emailIcon = document.createElement("i");
 emailIcon.classList.add("fa-solid", "fa-envelope");
 socialLinkEmail.appendChild(emailIcon);

@@ -160,14 +160,15 @@ body {
     width: 100%;
     max-width: 300px;
     height: 100vh;
-    border: 2px solid var(--background-color);
+    border: 2px solid var(--main-color);
     border-right: none;
     position: absolute;
     right: 0;
     top: 60px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    background-color: var(--secondary-color);
+    background-color: var(--text-color);
+    box-shadow: 0 10px 50px var(--main-color);
     z-index: 10;
     display: flex;
     flex-direction: column;
@@ -180,11 +181,12 @@ body {
 
 .side-bar a {
     text-align: center;
-    color: var(--card-color);
+    color: var(--background-color);
     padding: 30px 0;
-    border-bottom:3px solid var(--card-color);
+    border-bottom:3px solid var(--main-color);
     text-decoration: none;
     font-weight: bold;
+    transition: 0.5s ease-in-out;
 }
 
 .side-bar .contact-link {
@@ -192,8 +194,11 @@ body {
 }
 
 .side-bar a:hover {
-    background-color: var(--paragraph-color);
+    background-color: var(--card-color);
     color: var(--main-color);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    letter-spacing:3px;
 }
 
 .hero-section {
@@ -578,6 +583,26 @@ body {
     border-color:var(--text-color)
 }
 
+.error-message {
+    width:100%;
+    max-width:250px;
+    height:60px;
+    padding: 20px;
+    color:var(--background-color);
+    background-color:var(--main-color);
+    border:2px solid var(--text-color);
+    border-radius:20px;
+    text-align: left;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:16px;
+    box-shadow: 0 10px 80px var(--main-color);
+    display:none;
+}
+
 .footer-section {
     width: 100%;
     display: flex;
@@ -619,6 +644,12 @@ body {
     color: var(--main-color);
     font-size: 25px;
     cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.footer-section .footer-container .links-container i:hover{
+    color: var(--text-color);
+    transform: scale(1.3);
 }
 
 .footer-section .footer-container small {
@@ -654,6 +685,7 @@ body {
     border: 2px solid var(--main-color);
     color: var(--main-color);
 }
+
 
 .background-video {
     position: fixed;
