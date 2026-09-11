@@ -10,6 +10,10 @@
 // videoSource.type = "video/mp4";
 // backgroundVideo.appendChild(videoSource);
 // document.body.prepend(backgroundVideo);
+window.history.scrollRestoration = "manual";
+window.onload = function(){
+    scrollTo(0,0);
+};
 // create navbar:
 let navBar = document.createElement("nav");
 navBar.classList.add("navbar");
@@ -39,41 +43,52 @@ barIcon.classList.add("fa-solid","fa-bars");
 navButton.appendChild(barIcon);
 navBar.appendChild(navButton);
 document.body.appendChild(navBar);
+
+navButton.onclick = function(){
+    sideBar.classList.toggle("apparent"); 
+};
+document.addEventListener("click", function(event){
+
+    if (!sideBar.contains(event.target) && !navButton.contains(event.target)) {
+        sideBar.classList.remove("apparent");
+    }
+
+});
 // create side bar :
 let sideBar = document.createElement("nav");
 sideBar.classList.add("side-bar");
 let homeLink = document.createElement("a");
 homeLink.href = "#HOME";
 homeLink.onclick = function(){
-    sideBar.classList.toggle("apparent");
+    sideBar.classList.remove("apparent");
 };
 let homeLinkContent = document.createTextNode("HOME");
 homeLink.appendChild(homeLinkContent);
 let aboutLink = document.createElement("a");
 aboutLink.href = "#ABOUT";   
 aboutLink.onclick = function(){
-    sideBar.classList.toggle("apparent"); 
+    sideBar.classList.remove("apparent"); 
 };
 let aboutLinkContent = document.createTextNode("ABOUT");
 aboutLink.appendChild(aboutLinkContent);
 let skillsLink = document.createElement("a");
 skillsLink.href = "#SKILLS";
 skillsLink.onclick = function(){
-    sideBar.classList.toggle("apparent");
+    sideBar.classList.remove("apparent");
 };
 let skillsLinkContent = document.createTextNode("SKILLS");
 skillsLink.appendChild(skillsLinkContent);
 let projectsLink = document.createElement("a");
 projectsLink.href = "#PROJECTS";
 projectsLink.onclick = function(){
-    sideBar.classList.toggle("apparent");
+    sideBar.classList.remove("apparent");
 }
 let projectsLinkContent = document.createTextNode("PROJECTS");
 projectsLink.appendChild(projectsLinkContent);
 let contactLink = document.createElement("a");
 contactLink.href = "#CONTACT";
 contactLink.onclick = function(){
-    sideBar.classList.toggle("apparent");
+    sideBar.classList.remove("apparent");
 }
 contactLink.classList.add("contact-link");
 let contactLinkContent = document.createTextNode("CONTACT");
@@ -84,9 +99,6 @@ sideBar.appendChild(skillsLink);
 sideBar.appendChild(projectsLink);
 sideBar.appendChild(contactLink);
 document.body.prepend(sideBar);
-navButton.onclick = function(){
-    sideBar.classList.toggle("apparent"); 
-}
 
 //create hero section:
 let heroSection = document.createElement("section");
@@ -127,6 +139,11 @@ heroSection.appendChild(textDiv);
 heroSection.appendChild(myImageDiv);
 heroSection.appendChild(viewButton);
 document.body.appendChild(heroSection);
+viewButton.onclick = function(){
+    projectsSection.scrollIntoView({
+        behavior:"smooth",
+    })
+};
 //create about section:
 let aboutSection = document.createElement("section");
 aboutSection.id = "ABOUT";
@@ -226,6 +243,9 @@ projectOneDesc.appendChild(projectOneDescContent);
 let projectOneButton = document.createElement("button");
 let projectOneButtonContent = document.createTextNode("View Project");
 projectOneButton.appendChild(projectOneButtonContent);
+projectOneButton.onclick = function(){
+    location.href = "https://github.com/amalalawadi-dev/Graduation-Project";
+};
 cardProjectOne.appendChild(projectOneImage);
 cardProjectOne.appendChild(projectOneTitle);
 cardProjectOne.appendChild(projectOneDesc);
@@ -234,16 +254,19 @@ cardsProjectsContainer.appendChild(cardProjectOne);
 // card 2 
 let cardProjectTwo = document.createElement("div");
 let projectTwoImage = document.createElement("img");
-projectTwoImage.src = "Images/card2-Image.png";
+projectTwoImage.src = "Images/card2-image.png";
 let projectTwoTitle = document.createElement("h3");
-let projectTwoTitleContent = document.createTextNode("Calculator UI");
+let projectTwoTitleContent = document.createTextNode("Secured Easy Server Landing Page");
 projectTwoTitle.appendChild(projectTwoTitleContent);
 let projectTwoDesc = document.createElement("p");
-let projectTwoDescContent = document.createTextNode("A simple and responsive calculator built using HTML, CSS");
+let projectTwoDescContent = document.createTextNode("Developed a landing page website project using HTML and CSS. The website included a header, landing page, features, services, projects, about us, contact us, and footer sections.");
 projectTwoDesc.appendChild(projectTwoDescContent);
 let projectTwoButton = document.createElement("button");
 let projectTwoButtonContent = document.createTextNode("View Project");
 projectTwoButton.appendChild(projectTwoButtonContent);
+projectTwoButton.onclick = function(){
+    location.href = "https://github.com/amalalawadi-dev/secured-easy-server-landing";
+}
 cardProjectTwo.appendChild(projectTwoImage);
 cardProjectTwo.appendChild(projectTwoTitle);
 cardProjectTwo.appendChild(projectTwoDesc);
@@ -294,9 +317,31 @@ let contactButtonContent = document.createTextNode("Send Message");
 contactButton.appendChild(contactButtonContent);
 form.appendChild(contactButton);
 formSection.appendChild(form);
+let backButton = document.createElement("button");
+backButton.classList.add("back-button");
+let backButtonContent = document.createTextNode("Back To Top");
+backButton.appendChild(backButtonContent);
+window.onscroll = function(){
+    if (window.scrollY >= 3970){
+        backButton.style.display = "flex";
+    }
+    else{
+        backButton.style.display = "none";
+    }
+}
+
+backButton.onclick = function(){
+    window.scrollTo({
+        top:0,
+        left:0,
+        behavior:"smooth", 
+    });  
+};
+
 contactSection.appendChild(contactSectionTitle);
 contactSection.appendChild(contactSectionDesc);
 contactSection.appendChild(formSection);
+contactSection.appendChild(backButton);
 document.body.appendChild(contactSection);
 // create footer section:
 let footerSection = document.createElement("footer");
@@ -334,5 +379,3 @@ footerSection.appendChild(footerContainer);
 footerContainer.appendChild(footerSocialLinksContainer);
 footerContainer.appendChild(copyRight);
 document.body.appendChild(footerSection);
-
-
