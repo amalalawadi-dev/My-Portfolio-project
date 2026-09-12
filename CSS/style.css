@@ -583,7 +583,7 @@ body {
     border-color:var(--text-color)
 }
 
-.error-message {
+.form-message {
     width:100%;
     max-width:250px;
     height:60px;

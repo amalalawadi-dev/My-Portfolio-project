@@ -288,6 +288,8 @@ contactSectionDesc.appendChild(contactSectionDescContent);
 let formSection = document.createElement("section");
 formSection.classList.add("form-section");
 let form = document.createElement("form");
+form.action = "https://formspree.io/f/mzebwqwy";
+form.method = "POST";
 let nameLable = document.createElement("label");
 nameLable.htmlFor = "name-input";
 nameLable.innerText = "Your Name";
@@ -295,6 +297,7 @@ form.appendChild(nameLable);
 let nameInput = document.createElement("input");
 nameInput.type = "text";
 nameInput.id = "name-input";
+nameInput.name = "name";
 form.appendChild(nameInput);
 let emailLable = document.createElement("label");
 emailLable.innerText = "Your Email";
@@ -302,6 +305,7 @@ emailLable.htmlFor = "email-input"
 let emailInput = document.createElement("input");
 emailInput.type = "email";
 emailInput.id = "email-input";
+emailInput.name = "email";
 form.appendChild(emailLable);
 form.appendChild(emailInput);
 let messageAreaLable = document.createElement("label");
@@ -310,15 +314,16 @@ messageAreaLable.htmlFor = "messg-area";
 form.appendChild(messageAreaLable);
 let messageArea = document.createElement("textarea");
 messageArea.id = "messg-area";
+messageArea.name = "message";
 form.appendChild(messageArea);
 let contactButton = document.createElement("button");
 contactButton.classList.add("contact-button");
 let contactButtonContent = document.createTextNode("Send Message");
 contactButton.appendChild(contactButtonContent);
 form.appendChild(contactButton);
-let errorMessage = document.createElement("div");
-errorMessage.classList.add("error-message");
-form.appendChild(errorMessage);
+let formMessage = document.createElement("div");
+formMessage.classList.add("form-message");
+form.appendChild(formMessage);
 formSection.appendChild(form);
 let backButton = document.createElement("button");
 backButton.classList.add("back-button");
@@ -344,55 +349,45 @@ let emailPattern = /^[A-Za-z0-9._-]+@[A-Za-z0-9._-]+\.[A-Za-z]{2,}$/;
 form.addEventListener("submit",function(event){
     event.preventDefault();
     if(nameInput.value.trim() == "" && emailInput.value.trim() == "" && messageArea.value.trim() == "" ){
-        errorMessage.innerText = "Please fill in all fields before submitting the form";
-        errorMessage.style.display = "flex";
+        formMessage.innerText = "Please fill in all fields before submitting the form";
+        formMessage.style.display = "flex";
         return;
     }
     if(nameInput.value.trim() == ""){
-        errorMessage.innerText = "Please Enter Your Name";
-        errorMessage.style.display = "flex";
+        formMessage.innerText = "Please Enter Your Name";
+        formMessage.style.display = "flex";
         return;
     }
     if(!namePattern.test(nameInput.value.trim())){
-        errorMessage.innerText = "Please Enter a Valid Name";
-        errorMessage.style.display = "flex";
+        formMessage.innerText = "Please Enter a Valid Name";
+        formMessage.style.display = "flex";
         return;
     }
     
     if(emailInput.value.trim() == ""){
-        errorMessage.innerText = "Please Enter Your Email";
-        errorMessage.style.display = "flex";
+        formMessage.innerText = "Please Enter Your Email";
+        formMessage.style.display = "flex";
         return;
     }
     if(!emailPattern.test(emailInput.value.trim())){
-        errorMessage.innerText = "Please Enter a Valid Email";
-        errorMessage.style.display = "flex";
+        formMessage.innerText = "Please Enter a Valid Email";
+        formMessage.style.display = "flex";
         return
     }
 
     if(messageArea.value.trim() == ""){
-        errorMessage.innerText = "Please Enter Your Message";
-        errorMessage.style.display = "flex";
+        formMessage.innerText = "Please Enter Your Message";
+        formMessage.style.display = "flex";
         return;
     }
 
     if(messageArea.value.length < 10){
-        errorMessage.innerText = "Please enter a longer message";
-        errorMessage.style.display = "flex";
-        return;
-    }
-
-    else{
-        errorMessage.innerText = "Your message has been sent successfully!";
-        errorMessage.style.display = "flex";
+        formMessage.innerText = "Please enter a longer message";
+        formMessage.style.display = "flex";
         return;
     }
 }); 
     
-
-
-
-
 contactSection.appendChild(contactSectionTitle);
 contactSection.appendChild(contactSectionDesc);
 contactSection.appendChild(formSection);
