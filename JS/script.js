@@ -1,15 +1,3 @@
-// // create backgrond-video:
-// let backgroundVideo = document.createElement("video");
-// backgroundVideo.classList.add("background-video");
-// backgroundVideo.autoplay = true;
-// backgroundVideo.muted = true;
-// backgroundVideo.loop = true;
-// backgroundVideo.playsInline = true;
-// let videoSource = document.createElement("source");
-// videoSource.src = "Vedeos/12649331_1920_1080_30fps.mp4";
-// videoSource.type = "video/mp4";
-// backgroundVideo.appendChild(videoSource);
-// document.body.prepend(backgroundVideo);
 window.history.scrollRestoration = "manual";
 window.onload = function(){
     scrollTo(0,0);
