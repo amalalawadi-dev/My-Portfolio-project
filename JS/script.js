@@ -239,7 +239,7 @@ cardsProjectsContainer.classList.add("cards-container");
 //card 1
 let cardProjectOne = document.createElement("div");
 let projectOneImage = document.createElement("img");
-projectOneImage.src = "../Images/card1-Image.png";
+projectOneImage.src = "../Images/cardOne-Image.png";
 let projectOneTitle = document.createElement("h3");
 let projectOneTitleContent = document.createTextNode("MedAnalyzer System");
 projectOneTitle.appendChild(projectOneTitleContent);
@@ -260,7 +260,7 @@ cardsProjectsContainer.appendChild(cardProjectOne);
 // card 2 
 let cardProjectTwo = document.createElement("div");
 let projectTwoImage = document.createElement("img");
-projectTwoImage.src = "../Images/card2-Image.png";
+projectTwoImage.src = "../Images/cardTwo-Image.png";
 let projectTwoTitle = document.createElement("h3");
 let projectTwoTitleContent = document.createTextNode("Secured Easy Server Landing Page");
 projectTwoTitle.appendChild(projectTwoTitleContent);
