@@ -24,6 +24,24 @@ spanChar4.classList.add("char-four");
 spanChar4.innerText = "L";
 myName.appendChild(spanChar4);
 navBar.appendChild(myName);
+let desktopNav = document.createElement("div");
+desktopNav.classList.add("desktop-nav");
+
+let navLinks = [
+    ["Home", "#HOME"],
+    ["About", "#ABOUT"],
+    ["Skills", "#SKILLS"],
+    ["Projects", "#PROJECTS"],
+    ["Contact", "#CONTACT"]
+];
+
+navLinks.forEach(function(link) {
+    let a = document.createElement("a");
+    a.innerText = link[0];
+    a.href = link[1];
+    desktopNav.appendChild(a);
+});
+navBar.appendChild(desktopNav);
 let navButton = document.createElement("button");
 navButton.classList.add("nav-button");
 let barIcon = document.createElement("i");
@@ -124,8 +142,8 @@ viewButton.classList.add("view-button");
 let viewButtonContent = document.createTextNode("View My Work"); 
 viewButton.appendChild(viewButtonContent);
 heroSection.appendChild(textDiv);
+textDiv.appendChild(viewButton);
 heroSection.appendChild(myImageDiv);
-heroSection.appendChild(viewButton);
 document.body.appendChild(heroSection);
 viewButton.onclick = function(){
     projectsSection.scrollIntoView({
@@ -273,52 +291,16 @@ contactSectionTitle.appendChild(contactSectionTitleContent);
 let contactSectionDesc = document.createElement("p");
 let contactSectionDescContent = document.createTextNode("I'm always open to new opportunities, collaborations, and interesting projects. Feel free to reach out.");
 contactSectionDesc.appendChild(contactSectionDescContent);
-let formSection = document.createElement("section");
-formSection.classList.add("form-section");
-let form = document.createElement("form");
-form.action = "https://formspree.io/f/mzebwqwy";
-form.method = "POST";
-let nameLable = document.createElement("label");
-nameLable.htmlFor = "name-input";
-nameLable.innerText = "Your Name";
-form.appendChild(nameLable);
-let nameInput = document.createElement("input");
-nameInput.type = "text";
-nameInput.id = "name-input";
-nameInput.name = "name";
-form.appendChild(nameInput);
-let emailLable = document.createElement("label");
-emailLable.innerText = "Your Email";
-emailLable.htmlFor = "email-input"
-let emailInput = document.createElement("input");
-emailInput.type = "email";
-emailInput.id = "email-input";
-emailInput.name = "email";
-form.appendChild(emailLable);
-form.appendChild(emailInput);
-let messageAreaLable = document.createElement("label");
-messageAreaLable.innerText = "Your Message";
-messageAreaLable.htmlFor = "messg-area";
-form.appendChild(messageAreaLable);
-let messageArea = document.createElement("textarea");
-messageArea.id = "messg-area";
-messageArea.name = "message";
-form.appendChild(messageArea);
-let contactButton = document.createElement("button");
-contactButton.classList.add("contact-button");
-let contactButtonContent = document.createTextNode("Send Message");
-contactButton.appendChild(contactButtonContent);
-form.appendChild(contactButton);
-let formMessage = document.createElement("div");
-formMessage.classList.add("form-message");
-form.appendChild(formMessage);
-formSection.appendChild(form);
+let contactEmail = document.createElement("a");
+contactEmail.href = "mailto:amalalawadi2001@gmail.com";
+let contactEmailContent = document.createTextNode("Let's Connect");
+contactEmail.appendChild(contactEmailContent);
 let backButton = document.createElement("button");
 backButton.classList.add("back-button");
 let backButtonContent = document.createTextNode("Back To Top");
 backButton.appendChild(backButtonContent);
 window.onscroll = function(){
-    if (window.scrollY >= 3970){
+    if (window.scrollY >= 3480){
         backButton.style.display = "flex";
     }
     else{
@@ -332,53 +314,10 @@ backButton.onclick = function(){
         behavior:"smooth", 
     });  
 };
-let namePattern = /^[A-Za-z ]+$/;
-let emailPattern = /^[A-Za-z0-9._-]+@[A-Za-z0-9._-]+\.[A-Za-z]{2,}$/;
-form.addEventListener("submit",function(event){
-    event.preventDefault();
-    if(nameInput.value.trim() == "" && emailInput.value.trim() == "" && messageArea.value.trim() == "" ){
-        formMessage.innerText = "Please fill in all fields before submitting the form";
-        formMessage.style.display = "flex";
-        return;
-    }
-    if(nameInput.value.trim() == ""){
-        formMessage.innerText = "Please Enter Your Name";
-        formMessage.style.display = "flex";
-        return;
-    }
-    if(!namePattern.test(nameInput.value.trim())){
-        formMessage.innerText = "Please Enter a Valid Name";
-        formMessage.style.display = "flex";
-        return;
-    }
-    
-    if(emailInput.value.trim() == ""){
-        formMessage.innerText = "Please Enter Your Email";
-        formMessage.style.display = "flex";
-        return;
-    }
-    if(!emailPattern.test(emailInput.value.trim())){
-        formMessage.innerText = "Please Enter a Valid Email";
-        formMessage.style.display = "flex";
-        return
-    }
 
-    if(messageArea.value.trim() == ""){
-        formMessage.innerText = "Please Enter Your Message";
-        formMessage.style.display = "flex";
-        return;
-    }
-
-    if(messageArea.value.length < 10){
-        formMessage.innerText = "Please enter a longer message";
-        formMessage.style.display = "flex";
-        return;
-    }
-}); 
-    
 contactSection.appendChild(contactSectionTitle);
 contactSection.appendChild(contactSectionDesc);
-contactSection.appendChild(formSection);
+contactSection.appendChild(contactEmail);
 contactSection.appendChild(backButton);
 document.body.appendChild(contactSection);
 // create footer section:

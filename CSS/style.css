@@ -13,6 +13,10 @@
     --margin-section:6% 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: "Poppins", sans-serif;
@@ -149,7 +153,7 @@ body {
 
 .navbar .nav-button .fa-solid.fa-bars {
     color:var(--text-color);
-    font-size:20px;
+    font-size:23px;
 }
 
 .navbar .nav-button .fa-solid.fa-bars:hover {
@@ -182,7 +186,7 @@ body {
 .side-bar a {
     text-align: center;
     color: var(--background-color);
-    padding: 30px 0;
+    padding: 20px 0;
     border-bottom:3px solid var(--main-color);
     text-decoration: none;
     font-weight: bold;
@@ -234,19 +238,20 @@ body {
 
 .hero-section .text-div .main-title {
     color:var(--text-color);
-    font-size:26px;
+    font-size:22px;
     margin:0;
 }
 
 .hero-section .text-div .sub-title {
     color:var(--text-color);
-    font-size:18px;
+    font-size:15px;
+    text-align: center;
     margin:0;
 }
 
 .hero-section .text-div .sub-title .highlight {
     color:var(--main-color);
-    font-size:22px;
+    font-size:20px;
 }
 
 .hero-section .text-div .hero-paragraph {
@@ -254,12 +259,12 @@ body {
     max-width:350px;
     text-align:center;
     line-height:1.5;
-    font-size:14px;
-    margin:0;
+    font-size:13px;
+    margin:0 5px;
 }
 
 .hero-section .myImage-div {
-    width:90%;
+    width:70%;
     max-width:350px;
     height:auto; 
     opacity: 0;
@@ -287,7 +292,7 @@ body {
 }
 
 .hero-section .view-button {
-    width:150px;
+    width:140px;
     height:auto;
     background-color:var(--background-color);
     border:2px solid var(--secondary-color);
@@ -319,17 +324,17 @@ body {
 .about-section .about-title {
     color:var(--text-color);
     margin:0;
-    font-size:24px;
+    font-size:20px;
 }
 
 .about-section .about-paragraph {
     max-width:350px;
-    font-size:14px;
+    font-size:13px;
     color:var(--paragraph-color);
     line-height:1.5;
     text-align:center;
     margin:0;
-    margin:30px 0;
+    margin:30px 10px;
 }
 
 .skills-section {
@@ -344,7 +349,7 @@ body {
 .skills-section .title-section {
     color:var(--text-color);
     margin:0;
-    font-size:24px;
+    font-size:20px;
 
 }
 
@@ -361,10 +366,10 @@ body {
 .skills-section .skills-container .card-two,
 .skills-section .skills-container .card-three {
     background-color: var(--card-color);
-    width:100%;
+    width:80%;
     max-width: 350px;
     height: auto;
-    padding:20px 30px;
+    padding:20px 20px;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -380,7 +385,7 @@ body {
 .skills-section .skills-container .card-two .fa-brands.fa-css3-alt,
 .skills-section .skills-container .card-three .fa-brands.fa-square-js {
     color:var(--secondary-color);
-    font-size: 80px;
+    font-size: 55px;
     font-weight: bold;
     text-align: center;
     padding:6px;
@@ -390,7 +395,7 @@ body {
 .skills-section .skills-container .cardTwo-title,
 .skills-section .skills-container .cardThree-title {
     color:var(--main-color);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -398,7 +403,7 @@ body {
 .skills-section .skills-container .cardTwo-desc,
 .skills-section .skills-container .cardThree-desc {
     color:var(--paragraph-color);
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.5;
     text-align: center;
     padding:6px;
@@ -423,7 +428,7 @@ body {
 
 .project-section .section-title {
     color:var(--text-color);
-    font-size:26px;
+    font-size:20px;
     margin:0;
 }
 
@@ -440,10 +445,10 @@ body {
 
 .project-section .cards-container div {
     background-color: var(--card-color);
-    width:100%;
+    width:80%;
     max-width: 350px;
     height: auto;
-    padding:20px 30px;
+    padding:20px 20px;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -473,20 +478,20 @@ body {
 
 .project-section .cards-container div h3 {
     color:var(--main-color);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
 }
 
 .project-section .cards-container div p {
     color:var(--paragraph-color);
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.5;
     text-align: center;
     margin:10px;
 }
 
 .project-section .cards-container div button {
-    width:150px;
+    width:140px;
     height:auto;
     background-color:var(--background-color);
     border:2px solid var(--secondary-color);
@@ -517,90 +522,29 @@ body {
 
 .contact-section h2 {
     color:var(--text-color);
-    font-size:26px;
+    font-size:20px;
     margin:0;
 }
 
 .contact-section p {
     max-width:350px;
-    font-size:14px;
+    font-size:13px;
     color:var(--paragraph-color);
     line-height:1.5;
     text-align:center;
     margin:30px 0;
 }
 
-.contact-section .form-section form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    box-shadow: 0 10px 10px var(--main-color);
-    padding: 50px;
+.contact-section a {
+    font-size: 30px;
+    text-decoration: none;
+    color: var(--shadow-color);
+    transition: 0.3s ease-in;
 }
 
-.contact-section .form-section form label {
-    color: var(--text-color);
-    font-size: 15px;
-    margin-left: 6px;
-}
-
-.contact-section .form-section form input,
-.contact-section .form-section form textarea {
-    width: 100%;
-    max-width:350px;
-    height: 40px;
-    border-radius: 10px;
-    border: 2px solid var(--secondary-color);
-    padding: 8px;
-    outline: none;
-    font-size: 17px;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    margin: 10px 0;
-}
-
-.contact-section .form-section form textarea {
-    height: 150px;
-}
-
-.contact-section .form-section form .contact-button {
-    width: 100%;
-    height: 50px;
-    background-color: var(--background-color);
-    border-radius: 10px;
-    border: 2px solid var(--secondary-color);
+.contact-section a:hover {
     color: var(--paragraph-color);
-    font-weight: bold;
-    font-size: 16px;
-    margin: 15px 0;
-    cursor: pointer;
-}
-
-.contact-section .form-section form .contact-button:hover {
-    background-color: var(--main-color);
-    color: var(--background-color);
-    border-color:var(--text-color)
-}
-
-.form-message {
-    width:100%;
-    max-width:250px;
-    height:60px;
-    padding: 20px;
-    color:var(--background-color);
-    background-color:var(--main-color);
-    border:2px solid var(--text-color);
-    border-radius:20px;
-    text-align: left;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    font-weight:bold;
-    font-size:16px;
-    box-shadow: 0 10px 80px var(--main-color);
-    display:none;
+    transform: scale(1.1);
 }
 
 .footer-section {
@@ -624,11 +568,12 @@ body {
 .footer-section .footer-container h3 {
     color: var(--main-color);
     margin: 10px 0;
+    font-size: 18px;
 }
 
 .footer-section .footer-container p {
     color: var(--text-color);
-    font-size: 16px;
+    font-size: 15px;
     margin: 10px 0;
 }
 
@@ -642,7 +587,7 @@ body {
 
 .footer-section .footer-container .links-container i {
     color: var(--main-color);
-    font-size: 25px;
+    font-size: 22px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
@@ -686,9 +631,684 @@ body {
     color: var(--main-color);
 }
 
-/* Media query */
+/* media query */
+/* =========================================================
+   TABLET
+   600px+
+========================================================= */
+
+@media (min-width: 600px) {
+
+    /* ================= NAVBAR ================= */
+
+    .navbar {
+        height: 70px;
+        padding: 10px 30px;
+    }
+
+    .navbar .my-name,
+    .navbar .my-name .char-one,
+    .navbar .my-name .char-two,
+    .navbar .my-name .char-three,
+    .navbar .my-name .char-four {
+        font-size: 28px;
+    }
+
+    .navbar .nav-button {
+        width: 35px;
+        height: 25px;
+    }
+
+    .navbar .nav-button .fa-solid.fa-bars {
+        font-size: 25px;
+    }
+
+    .side-bar {
+        top: 70px;
+        max-width: 350px;
+    }
 
 
+    /* ================= HERO ================= */
+
+    .hero-section {
+        min-height: calc(100vh - 70px);
+
+        padding: 60px 30px;
+
+        gap: 40px;
+    }
+
+    .hero-section .text-div .main-title {
+        font-size: 30px;
+    }
+
+    .hero-section .text-div .sub-title {
+        font-size: 19px;
+    }
+
+    .hero-section .text-div .sub-title .highlight {
+        font-size: 24px;
+    }
+
+    .hero-section .text-div .hero-paragraph {
+        max-width: 550px;
+        font-size: 15px;
+    }
+
+    .hero-section .myImage-div {
+        width: 55%;
+        max-width: 400px;
+    }
+
+    .hero-section .view-button {
+        width: 160px;
+        font-size: 13px;
+    }
+
+
+    /* ================= ABOUT ================= */
+
+    .about-section {
+        padding: 20px 30px;
+    }
+
+    .about-section .about-title {
+        font-size: 25px;
+    }
+
+    .about-section .about-paragraph {
+        max-width: 600px;
+        font-size: 15px;
+    }
+
+
+    /* ================= SKILLS ================= */
+
+    .skills-section {
+        padding: 20px 30px;
+    }
+
+    .skills-section .title-section {
+        font-size: 25px;
+    }
+
+    .skills-section .skills-container {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(250px, 1fr));
+
+        max-width: 750px;
+
+        gap: 30px;
+    }
+
+    .skills-section .skills-container .card-one,
+    .skills-section .skills-container .card-two,
+    .skills-section .skills-container .card-three {
+        width: 100%;
+        max-width: none;
+    }
+
+
+    /* ================= PROJECTS ================= */
+
+    .project-section {
+        padding: 20px 30px;
+    }
+
+    .project-section .section-title {
+        font-size: 25px;
+    }
+
+    .project-section .cards-container {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(250px, 1fr));
+
+        max-width: 800px;
+
+        gap: 30px;
+
+        align-items: stretch;
+    }
+
+    .project-section .cards-container div {
+        width: 100%;
+        max-width: none;
+
+        height: 100%;
+    }
+
+
+    /* ================= CONTACT ================= */
+
+    .contact-section {
+        padding: 20px 30px;
+    }
+
+    .contact-section h2 {
+        font-size: 25px;
+    }
+
+    .contact-section p {
+        max-width: 600px;
+        font-size: 15px;
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    .footer-section .footer-container {
+        max-width: 600px;
+    }
+
+    .footer-section .footer-container h3 {
+        font-size: 22px;
+    }
+
+    .footer-section .footer-container p {
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP
+   900px+
+========================================================= */
+
+@media (min-width: 900px) {
+
+    /* ================= NAVBAR ================= */
+
+    .navbar {
+        height: 75px;
+        padding: 10px 50px;
+    }
+
+    .navbar .my-name,
+    .navbar .my-name .char-one,
+    .navbar .my-name .char-two,
+    .navbar .my-name .char-three,
+    .navbar .my-name .char-four {
+        font-size: 30px;
+    }
+
+
+    /* Hide hamburger */
+
+    .navbar .nav-button {
+        display: none;
+    }
+
+
+    /* Show desktop links */
+
+    .desktop-nav {
+        display: flex;
+
+        align-items: center;
+
+        gap: 25px;
+    }
+
+    .desktop-nav a {
+        color: var(--text-color);
+
+        text-decoration: none;
+
+        font-size: 15px;
+
+        font-weight: 600;
+
+        transition:
+            color 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    .desktop-nav a:hover {
+        color: var(--card-color);
+
+        transform: translateY(-2px);
+    }
+
+
+    /* Hide mobile sidebar */
+
+    .side-bar {
+        display: none !important;
+    }
+
+
+    /* ================= HERO ================= */
+
+    .hero-section {
+        min-height: calc(100vh - 75px);
+
+        max-width: 1200px;
+
+        margin: 0 auto;
+
+        padding: 70px 50px;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 70px;
+    }
+
+    .hero-section .text-div {
+        align-items: flex-start;
+
+        text-align: left;
+    }
+
+    .hero-section .text-div .main-title {
+        font-size: 38px;
+    }
+
+    .hero-section .text-div .sub-title {
+        text-align: left;
+
+        font-size: 22px;
+    }
+
+    .hero-section .text-div .sub-title .highlight {
+        font-size: 27px;
+    }
+
+    .hero-section .text-div .hero-paragraph {
+        max-width: 550px;
+
+        text-align: left;
+
+        margin: 0;
+
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+    .hero-section .myImage-div {
+        width: 80%;
+
+        max-width: 450px;
+    }
+
+    .hero-section .view-button {
+        width: 170px;
+
+        font-size: 14px;
+
+        padding: 12px;
+    }
+
+
+    /* ================= ABOUT ================= */
+
+    .about-section {
+        max-width: 1000px;
+
+        margin: 8% auto;
+
+        padding: 0 40px;
+    }
+
+    .about-section .about-title {
+        font-size: 30px;
+    }
+
+    .about-section .about-paragraph {
+        max-width: 750px;
+
+        font-size: 16px;
+
+        line-height: 1.8;
+    }
+
+
+    /* ================= SKILLS ================= */
+
+    .skills-section {
+        max-width: 1200px;
+
+        margin: 8% auto;
+
+        padding: 0 40px;
+    }
+
+    .skills-section .title-section {
+        font-size: 30px;
+    }
+
+    .skills-section .skills-container {
+        width: 100%;
+
+        max-width: 1000px;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 30px;
+    }
+
+    .skills-section .skills-container .card-one,
+    .skills-section .skills-container .card-two,
+    .skills-section .skills-container .card-three {
+        min-height: 280px;
+    }
+
+    .skills-section .skills-container .cardOne-title,
+    .skills-section .skills-container .cardTwo-title,
+    .skills-section .skills-container .cardThree-title {
+        font-size: 20px;
+    }
+
+    .skills-section .skills-container .cardOne-desc,
+    .skills-section .skills-container .cardTwo-desc,
+    .skills-section .skills-container .cardThree-desc {
+        font-size: 14px;
+    }
+
+
+    /* ================= PROJECTS ================= */
+
+    .project-section {
+        max-width: 1200px;
+
+        margin: 8% auto;
+
+        padding: 0 40px;
+    }
+
+    .project-section .section-title {
+        font-size: 30px;
+    }
+
+    .project-section .cards-container {
+        width: 100%;
+
+        max-width: 1000px;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 35px;
+
+        align-items: stretch;
+    }
+
+
+    /* Same height for all cards */
+
+    .project-section .cards-container div {
+        width: 100%;
+
+        max-width: none;
+
+        min-height: 500px;
+
+        height: 100%;
+
+        justify-content: flex-start;
+    }
+
+
+    /* Same image height */
+
+    .project-section .cards-container div img {
+        width: 100%;
+
+        height: 220px;
+
+        object-fit: cover;
+
+        margin: 0 0 15px;
+    }
+
+
+    .project-section .cards-container div h3 {
+        font-size: 20px;
+    }
+
+    .project-section .cards-container div p {
+        font-size: 14px;
+
+        line-height: 1.7;
+
+        flex: 1;
+    }
+
+
+    /* ================= CONTACT ================= */
+
+    .contact-section {
+        max-width: 900px;
+
+        margin: 8% auto;
+
+        padding: 0 40px;
+    }
+
+    .contact-section h2 {
+        font-size: 30px;
+    }
+
+    .contact-section p {
+        max-width: 700px;
+
+        font-size: 16px;
+
+        line-height: 1.8;
+    }
+
+    .contact-section a {
+        font-size: 35px;
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    .footer-section .footer-container {
+        max-width: 900px;
+
+        padding: 20px 0 30px;
+    }
+
+    .footer-section .footer-container h3 {
+        font-size: 24px;
+    }
+
+    .footer-section .footer-container p {
+        font-size: 16px;
+    }
+
+    .footer-section .footer-container .links-container {
+        gap: 20px;
+    }
+
+    .footer-section .footer-container .links-container i {
+        font-size: 25px;
+    }
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   1200px+
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    /* ================= NAVBAR ================= */
+
+    .navbar {
+        padding: 10px 80px;
+    }
+
+    .desktop-nav {
+        gap: 35px;
+    }
+
+    .desktop-nav a {
+        font-size: 16px;
+    }
+
+
+    /* ================= HERO ================= */
+
+    .hero-section {
+        max-width: 1300px;
+
+        padding: 80px 70px;
+
+        grid-template-columns:
+            1.1fr 0.9fr;
+
+        gap: 100px;
+    }
+
+    .hero-section .text-div .main-title {
+        font-size: 45px;
+    }
+
+    .hero-section .text-div .sub-title {
+        font-size: 24px;
+    }
+
+    .hero-section .text-div .sub-title .highlight {
+        font-size: 30px;
+    }
+
+    .hero-section .text-div .hero-paragraph {
+        font-size: 17px;
+
+        max-width: 600px;
+    }
+
+    .hero-section .myImage-div {
+        max-width: 500px;
+    }
+
+
+    /* ================= ABOUT ================= */
+
+    .about-section {
+        max-width: 1100px;
+    }
+
+    .about-section .about-title {
+        font-size: 32px;
+    }
+
+    .about-section .about-paragraph {
+        max-width: 850px;
+
+        font-size: 17px;
+    }
+
+
+    /* ================= SKILLS ================= */
+
+    .skills-section {
+        max-width: 1300px;
+    }
+
+    .skills-section .skills-container {
+        max-width: 1100px;
+
+        gap: 40px;
+    }
+
+
+    /* ================= PROJECTS ================= */
+
+    .project-section {
+        max-width: 1300px;
+    }
+
+    .project-section .cards-container {
+        max-width: 1100px;
+
+        gap: 40px;
+    }
+
+    .project-section .cards-container div {
+        min-height: 520px;
+    }
+
+    .project-section .cards-container div img {
+        height: 240px;
+    }
+
+
+    /* ================= CONTACT ================= */
+
+    .contact-section {
+        max-width: 1000px;
+    }
+
+    .contact-section p {
+        max-width: 800px;
+
+        font-size: 17px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA LARGE DESKTOP
+   1500px+
+========================================================= */
+
+@media (min-width: 1500px) {
+
+    .navbar {
+        padding: 10px 120px;
+    }
+
+    .desktop-nav {
+        gap: 40px;
+    }
+
+    .desktop-nav a {
+        font-size: 17px;
+    }
+
+    .hero-section {
+        max-width: 1400px;
+    }
+
+    .skills-section,
+    .project-section {
+        max-width: 1400px;
+    }
+}
+
+/* Mobile */
+.desktop-nav {
+    display: none;
+}
+
+.nav-button {
+    display: block;
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+
+    .nav-button {
+        display: none;
+    }
+
+    .desktop-nav {
+        display: flex;
+    }
+}
 
 
 
