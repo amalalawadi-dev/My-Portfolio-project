@@ -260,7 +260,7 @@ cardsProjectsContainer.appendChild(cardProjectOne);
 // card 2 
 let cardProjectTwo = document.createElement("div");
 let projectTwoImage = document.createElement("img");
-projectTwoImage.src = "Images/card2-image.png";
+projectTwoImage.src = "Images/card2-Image.png";
 let projectTwoTitle = document.createElement("h3");
 let projectTwoTitleContent = document.createTextNode("Secured Easy Server Landing Page");
 projectTwoTitle.appendChild(projectTwoTitleContent);
