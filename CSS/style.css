@@ -276,7 +276,7 @@ body {
 @keyframes imageZoomIn {
     from {
         opacity: 0;
-        transform: scale(3.5);
+        transform: scale(2.5);
 }
 
     to {
