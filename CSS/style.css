@@ -288,7 +288,6 @@ body {
 .hero-section .myImage-div .my-image {
     width:100%;
     height:auto; 
-    box-shadow: 0 10px 20px var(--secondary-color);
 }
 
 .hero-section .view-button {
