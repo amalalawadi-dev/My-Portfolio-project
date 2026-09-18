@@ -793,7 +793,7 @@ body {
         padding: 70px 50px;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 70px;
+        gap: 80px;
     }
     .hero-section .text-div {
         align-items: flex-start;
@@ -818,7 +818,7 @@ body {
     }
     .hero-section .myImage-div {
         width: 80%;
-        max-width: 450px;
+        max-width: 550px;
     }
     .hero-section .view-button {
         width: 170px;
@@ -952,7 +952,7 @@ body {
         max-width: 1300px;
         padding: 80px 70px;
         grid-template-columns: 1.1fr 0.9fr;
-        gap: 130px;
+        gap: 100px;
     }
     .hero-section .text-div .main-title {
         font-size: 45px;
