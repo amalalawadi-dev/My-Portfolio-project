@@ -820,6 +820,9 @@ body {
     .hero-section .myImage-div img {
         width:100%;
         height:auto;
+        border-radius:none;
+        border:none;
+        box-shadow:none;  
     }
         
     .hero-section .view-button {
