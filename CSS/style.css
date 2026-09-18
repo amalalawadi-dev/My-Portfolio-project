@@ -968,8 +968,7 @@ body {
         max-width: 600px;
     }
     .hero-section .myImage-div {
-        max-width: 600px;
-        height:auto;
+        max-width: 500px;
     }
     .about-section {
         max-width: 1100px;
