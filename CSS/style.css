@@ -952,7 +952,7 @@ body {
         max-width: 1300px;
         padding: 80px 70px;
         grid-template-columns: 1.1fr 0.9fr;
-        gap: 100px;
+        gap: 130px;
     }
     .hero-section .text-div .main-title {
         font-size: 45px;
@@ -969,7 +969,7 @@ body {
     }
     .hero-section .myImage-div {
         max-width: 600px;
-        height:70px;
+        height:auto;
     }
     .about-section {
         max-width: 1100px;
