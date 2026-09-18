@@ -791,7 +791,7 @@ body {
         min-height: calc(100vh - 75px);
         max-width: 1200px;
         margin: 0 auto;
-        padding: 70px 50px;
+        padding: 40px 50px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 80px;
@@ -959,7 +959,7 @@ body {
     }
     .hero-section {
         max-width: 1300px;
-        padding: 80px 70px;
+        padding: 40px 70px;
         grid-template-columns: 1.1fr 0.9fr;
         gap: 100px;
     }
