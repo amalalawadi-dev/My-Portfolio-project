@@ -791,10 +791,10 @@ body {
         min-height: calc(100vh - 75px);
         max-width: 1200px;
         margin: 0 auto;
-        padding: 40px 50px;
+        padding: 10px 50px;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 80px;
+        gap: 50px;
     }
     .hero-section .text-div {
         align-items: flex-start;
@@ -825,8 +825,7 @@ body {
         box-shadow:none;
     }
     .hero-section .myImage-div img {
-        width:100%;
-        height:auto;   
+        width:100%;   
     }
         
     .hero-section .view-button {
@@ -959,9 +958,9 @@ body {
     }
     .hero-section {
         max-width: 1300px;
-        padding: 40px 70px;
+        padding: 10px 70px;
         grid-template-columns: 1.1fr 0.9fr;
-        gap: 100px;
+        gap: 40px;
     }
     .hero-section .text-div .main-title {
         font-size: 45px;
