@@ -659,7 +659,6 @@ body {
         min-height: calc(100vh - 70px);
         padding: 60px 50px;
         gap: 80px;
-        justify-content:space-between;
     }
     .hero-section .text-div .main-title {
         font-size: 30px;
@@ -796,7 +795,6 @@ body {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 80px;
-        justify-content:space-between;
     }
     .hero-section .text-div {
         align-items: flex-start;
@@ -964,7 +962,6 @@ body {
         padding: 80px 70px;
         grid-template-columns: 1.1fr 0.9fr;
         gap: 100px;
-        justify-content:space-between;
     }
     .hero-section .text-div .main-title {
         font-size: 45px;
