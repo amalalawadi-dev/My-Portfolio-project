@@ -24,6 +24,8 @@ spanChar4.classList.add("char-four");
 spanChar4.innerText = "L";
 myName.appendChild(spanChar4);
 navBar.appendChild(myName);
+let programmingIcon = document.createElement("i");
+programmingIcon.classList.add("fa-solid" ,"fa-laptop-code");
 let desktopNav = document.createElement("div");
 desktopNav.classList.add("desktop-nav");
 
@@ -47,6 +49,7 @@ navButton.classList.add("nav-button");
 let barIcon = document.createElement("i");
 barIcon.classList.add("fa-solid","fa-bars");
 navButton.appendChild(barIcon);
+navBar.appendChild(programmingIcon);
 navBar.appendChild(navButton);
 document.body.appendChild(navBar);
 
@@ -137,6 +140,7 @@ let myImage = document.createElement("img");
 myImage.classList.add("my-image");
 myImageDiv.appendChild(myImage);
 myImage.src = "Images/hero-image.png";
+myImage.alt = "Amal Alawadi Front-End Developer";
 let viewButton  = document.createElement("button");
 viewButton.classList.add("view-button");
 let viewButtonContent = document.createTextNode("View My Work"); 
@@ -240,6 +244,7 @@ cardsProjectsContainer.classList.add("cards-container");
 let cardProjectOne = document.createElement("div");
 let projectOneImage = document.createElement("img");
 projectOneImage.src = "Images/card1-Image.png";
+projectOneImage.alt = "MedAnalyzer System Project";
 let projectOneTitle = document.createElement("h3");
 let projectOneTitleContent = document.createTextNode("MedAnalyzer System");
 projectOneTitle.appendChild(projectOneTitleContent);
@@ -261,6 +266,7 @@ cardsProjectsContainer.appendChild(cardProjectOne);
 let cardProjectTwo = document.createElement("div");
 let projectTwoImage = document.createElement("img");
 projectTwoImage.src = "Images/card2-image.png";
+projectTwoImage.alt = "Secured Easy Server Landing Page Project";
 let projectTwoTitle = document.createElement("h3");
 let projectTwoTitleContent = document.createTextNode("Secured Easy Server Landing Page");
 projectTwoTitle.appendChild(projectTwoTitleContent);
@@ -291,16 +297,20 @@ contactSectionTitle.appendChild(contactSectionTitleContent);
 let contactSectionDesc = document.createElement("p");
 let contactSectionDescContent = document.createTextNode("I'm always open to new opportunities, collaborations, and interesting projects. Feel free to reach out.");
 contactSectionDesc.appendChild(contactSectionDescContent);
+let contactEmailContainer = document.createElement("div");
+contactEmailContainer.classList.add("email-container");
 let contactEmail = document.createElement("a");
 contactEmail.href = "mailto:amalalawadi2001@gmail.com";
+contactEmailContainer.appendChild(contactEmail);
 let contactEmailContent = document.createTextNode("Let's Connect");
 contactEmail.appendChild(contactEmailContent);
 let backButton = document.createElement("button");
-backButton.classList.add("back-button");
-let backButtonContent = document.createTextNode("Back To Top");
-backButton.appendChild(backButtonContent);
+backButton.classList.add("back-button")
+let backButtonIcon = document.createElement("i");
+backButtonIcon.classList.add("fa-solid", "fa-chevron-up");
+backButton.appendChild(backButtonIcon);
 window.onscroll = function(){
-    if (window.scrollY >= 3480){
+    if (window.scrollY >= 1420){
         backButton.style.display = "flex";
     }
     else{
@@ -317,7 +327,7 @@ backButton.onclick = function(){
 
 contactSection.appendChild(contactSectionTitle);
 contactSection.appendChild(contactSectionDesc);
-contactSection.appendChild(contactEmail);
+contactSection.appendChild(contactEmailContainer);
 contactSection.appendChild(backButton);
 document.body.appendChild(contactSection);
 // create footer section:

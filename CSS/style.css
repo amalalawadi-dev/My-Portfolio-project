@@ -1,4 +1,6 @@
 * {
+    margin:0;
+    padding:0;
     box-sizing:border-box;
 }
 
@@ -10,7 +12,8 @@
     --paragraph-color: #B8C5CC;
     --card-color: #0A1C2B;
     --shadow-color:#048cfbc0;
-    --margin-section:6% 0;
+    --margin-section:5% 0;
+    --margin-title: 2% 0;
 }
 
 html {
@@ -21,11 +24,15 @@ body {
     margin: 0;
     font-family: "Poppins", sans-serif;
     background-color:var(--background-color);
+    overflow-x: hidden;
 }
 
 .navbar {
     width:100%;
     height:60px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
     background-color:var(--main-color);
     display:flex;
     flex-direction:row;
@@ -52,14 +59,14 @@ body {
     margin:0;
     font-size:24px;
     font-weight:bold;
-    color:var(--text-color);
+    color:var(--background-color);
 }
 
 .navbar .my-name .char-one{
     margin:0;
     font-size:24px;
     font-weight:bold;
-    color:var(--text-color);
+    color:var(--background-color);
     display: inline-block;
     animation: charOneAnimation 8s ease-in-out 0s infinite;
 }
@@ -104,7 +111,7 @@ body {
     margin:0;
     font-size:24px;
     font-weight:bold;
-    color:var(--text-color);
+    color:var(--background-color);
     display: inline-block;
     animation: charThreeAnimation 4s ease-in-out 6s infinite;
 }
@@ -142,6 +149,25 @@ body {
     }
 }
 
+.desktop-nav {
+    display: none;
+}
+
+.desktop-nav a {
+    margin: 0 16px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--text-color);
+    border: none;
+    padding: 7px 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.desktop-nav a:hover {
+    color: var(--background-color);
+}
 
 .navbar .nav-button {
     width:30px;
@@ -149,6 +175,13 @@ body {
     background-color:transparent;
     border:none;
     cursor:pointer;
+}
+
+.navbar .fa-solid.fa-laptop-code {
+    font-size: 30px;
+    color: #131719;
+    cursor: pointer;
+    display: none;
 }
 
 .navbar .nav-button .fa-solid.fa-bars {
@@ -166,14 +199,14 @@ body {
     height: 100vh;
     border: 2px solid var(--main-color);
     border-right: none;
-    position: absolute;
-    right: 0;
+    position: fixed;
     top: 60px;
+    right: 0;
+    z-index: 6;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     background-color: var(--text-color);
     box-shadow: 0 10px 50px var(--main-color);
-    z-index: 10;
     display: flex;
     flex-direction: column;
     display: none;
@@ -206,6 +239,7 @@ body {
 }
 
 .hero-section {
+    scroll-margin-top: 73px;
     display:flex;
     gap:30px;
     flex-direction:column;
@@ -213,6 +247,7 @@ body {
     align-items:center;
     padding:40px 0;
     animation:heroAnimation 3s ease-in-out;
+    margin-top: 40px;
 }
 
 @keyframes heroAnimation {
@@ -239,7 +274,6 @@ body {
 .hero-section .text-div .main-title {
     color:var(--text-color);
     font-size:22px;
-    margin:0;
 }
 
 .hero-section .text-div .sub-title {
@@ -286,9 +320,6 @@ body {
 .hero-section .myImage-div .my-image {
     width:100%;
     height:auto;
-    border-radius:40px; 
-    border:2px solid var(--secondary-color);  
-    box-shadow: 0 10px 20px var(--secondary-color);
 }
 
 .hero-section .view-button {
@@ -313,12 +344,13 @@ body {
 }
 
 .about-section {
+    scroll-margin-top: 73px;
     width:100%;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    margin:var(--margin-section);
+    margin: var(--margin-section);
 }
 
 .about-section .about-title {
@@ -338,6 +370,7 @@ body {
 }
 
 .skills-section {
+    scroll-margin-top: 73px;
     width:100%;
     display:flex;
     flex-direction:column;
@@ -418,6 +451,7 @@ body {
 }
 
 .project-section {
+    scroll-margin-top: 73px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -512,6 +546,7 @@ body {
 }
 
 .contact-section {
+    scroll-margin-top: 73px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -535,16 +570,36 @@ body {
     margin:30px 0;
 }
 
-.contact-section a {
-    font-size: 30px;
-    text-decoration: none;
-    color: var(--shadow-color);
+.contact-section .email-container {
+    max-width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--main-color);
+    padding: 16px 20px;
+    border-radius: 20px;
+    background-color: var(--card-color);   
     transition: 0.3s ease-in;
 }
 
-.contact-section a:hover {
-    color: var(--paragraph-color);
+.contact-section .email-container:hover {
+    background-color: var(--main-color);
+    cursor: pointer;
+    border-color: var(--text-color);
     transform: scale(1.1);
+}
+
+.contact-section .email-container a {
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.contact-section .email-container a:hover {
+    color: var(--card-color);
 }
 
 .footer-section {
@@ -605,21 +660,23 @@ body {
 .back-button {
     position: fixed;
     right: 20px;
-    bottom: 200px;
-    width: 80px;
-    height: 40px;
+    bottom: 80px;
+    width: 50px;
+    height: 50px;
     background-color: var(--main-color);
-    outline: none;
-    font-weight: bold;
-    color: var(--background-color);
+    border: 2px solid var(--text-color);
+    border-radius: 50%;
     cursor: pointer;
-    border-radius: 10px;
-    border: none;
-    border:2px solid var(--text-color);
-    padding: 5px;
-    text-align: center;
-    font-size: 12px;
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.back-button i {
+    font-size: 25px;
+    color: var(--background-color);
+    display: block;
 }
 
 .hidden {
@@ -631,686 +688,314 @@ body {
     color: var(--main-color);
 }
 
-/* media query */
-/* =========================================================
-   TABLET
-   600px+
-========================================================= */
-
-@media (min-width: 600px) {
-
-    /* ================= NAVBAR ================= */
-
-    .navbar {
-        height: 70px;
-        padding: 10px 30px;
-    }
-
-    .navbar .my-name,
-    .navbar .my-name .char-one,
-    .navbar .my-name .char-two,
-    .navbar .my-name .char-three,
-    .navbar .my-name .char-four {
-        font-size: 28px;
-    }
-
-    .navbar .nav-button {
-        width: 35px;
-        height: 25px;
-    }
-
-    .navbar .nav-button .fa-solid.fa-bars {
-        font-size: 25px;
-    }
-
-    .side-bar {
-        top: 70px;
-        max-width: 350px;
-    }
-
-
-    /* ================= HERO ================= */
-
+/* Responsive Design */
+@media (min-width:700px) and (max-width:992px){
     .hero-section {
-        min-height: calc(100vh - 70px);
-
-        padding: 60px 30px;
-
-        gap: 40px;
+    display:flex;
+    gap:14px;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:center;
+    padding:40px 10px;
     }
-
+    .hero-section .text-div {
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    justify-content:center;
+    align-items:center;
+    }
     .hero-section .text-div .main-title {
-        font-size: 30px;
+    font-size:26px;
     }
-
     .hero-section .text-div .sub-title {
-        font-size: 19px;
+    font-size:20px;
     }
-
     .hero-section .text-div .sub-title .highlight {
-        font-size: 24px;
+    font-size:23px;
     }
-
     .hero-section .text-div .hero-paragraph {
-        max-width: 550px;
-        font-size: 15px;
+    max-width:400px;
+    font-size:16px;
     }
-
     .hero-section .myImage-div {
-        width: 55%;
-        max-width: 400px;
+    width:35%;
+    max-width:350px;
     }
-
-    .hero-section .view-button {
-        width: 160px;
-        font-size: 13px;
-    }
-
-
-    /* ================= ABOUT ================= */
-
-    .about-section {
-        padding: 20px 30px;
-    }
-
-    .about-section .about-title {
-        font-size: 25px;
-    }
-
-    .about-section .about-paragraph {
-        max-width: 600px;
-        font-size: 15px;
-    }
-
-
-    /* ================= SKILLS ================= */
-
-    .skills-section {
-        padding: 20px 30px;
-    }
-
-    .skills-section .title-section {
-        font-size: 25px;
-    }
-
-    .skills-section .skills-container {
-        display: grid;
-
-        grid-template-columns:
-            repeat(2, minmax(250px, 1fr));
-
-        max-width: 750px;
-
-        gap: 30px;
-    }
-
-    .skills-section .skills-container .card-one,
-    .skills-section .skills-container .card-two,
-    .skills-section .skills-container .card-three {
+    .hero-section .myImage-div .my-image {
         width: 100%;
-        max-width: none;
     }
-
-
-    /* ================= PROJECTS ================= */
-
-    .project-section {
-        padding: 20px 30px;
-    }
-
-    .project-section .section-title {
-        font-size: 25px;
-    }
-
-    .project-section .cards-container {
-        display: grid;
-
-        grid-template-columns:
-            repeat(2, minmax(250px, 1fr));
-
-        max-width: 800px;
-
-        gap: 30px;
-
-        align-items: stretch;
-    }
-
-    .project-section .cards-container div {
-        width: 100%;
-        max-width: none;
-
-        height: 100%;
-    }
-
-
-    /* ================= CONTACT ================= */
-
-    .contact-section {
-        padding: 20px 30px;
-    }
-
-    .contact-section h2 {
-        font-size: 25px;
-    }
-
-    .contact-section p {
-        max-width: 600px;
-        font-size: 15px;
-    }
-
-
-    /* ================= FOOTER ================= */
-
-    .footer-section .footer-container {
-        max-width: 600px;
-    }
-
-    .footer-section .footer-container h3 {
-        font-size: 22px;
-    }
-
-    .footer-section .footer-container p {
-        font-size: 16px;
-    }
-}
-
-
-/* =========================================================
-   LAPTOP
-   900px+
-========================================================= */
-
-@media (min-width: 900px) {
-
-    /* ================= NAVBAR ================= */
-
-    .navbar {
-        height: 75px;
-        padding: 10px 50px;
-    }
-
-    .navbar .my-name,
-    .navbar .my-name .char-one,
-    .navbar .my-name .char-two,
-    .navbar .my-name .char-three,
-    .navbar .my-name .char-four {
-        font-size: 30px;
-    }
-
-
-    /* Hide hamburger */
-
-    .navbar .nav-button {
-        display: none;
-    }
-
-
-    /* Show desktop links */
-
     .desktop-nav {
         display: flex;
-
-        align-items: center;
-
-        gap: 25px;
     }
-
-    .desktop-nav a {
-        color: var(--text-color);
-
-        text-decoration: none;
-
-        font-size: 15px;
-
-        font-weight: 600;
-
-        transition:
-            color 0.3s ease,
-            transform 0.3s ease;
-    }
-
-    .desktop-nav a:hover {
-        color: var(--card-color);
-
-        transform: translateY(-2px);
-    }
-
-
-    /* Hide mobile sidebar */
-
-    .side-bar {
-        display: none !important;
-    }
-
-
-    /* ================= HERO ================= */
-
-    .hero-section {
-        min-height: calc(100vh - 75px);
-
-        max-width: 1200px;
-
-        margin: 0 auto;
-
-        padding: 70px 50px;
-
-        display: grid;
-
-        grid-template-columns: 1fr 1fr;
-
-        gap: 70px;
-    }
-
-    .hero-section .text-div {
-        align-items: flex-start;
-
-        text-align: left;
-    }
-
-    .hero-section .text-div .main-title {
-        font-size: 38px;
-    }
-
-    .hero-section .text-div .sub-title {
-        text-align: left;
-
-        font-size: 22px;
-    }
-
-    .hero-section .text-div .sub-title .highlight {
-        font-size: 27px;
-    }
-
-    .hero-section .text-div .hero-paragraph {
-        max-width: 550px;
-
-        text-align: left;
-
-        margin: 0;
-
-        font-size: 16px;
-
-        line-height: 1.7;
-    }
-
-    .hero-section .myImage-div {
-        width: 80%;
-
-        max-width: 450px;
-    }
-
-    .hero-section .view-button {
-        width: 170px;
-
-        font-size: 14px;
-
-        padding: 12px;
-    }
-
-
-    /* ================= ABOUT ================= */
-
-    .about-section {
-        max-width: 1000px;
-
-        margin: 8% auto;
-
-        padding: 0 40px;
-    }
-
-    .about-section .about-title {
-        font-size: 30px;
-    }
-
-    .about-section .about-paragraph {
-        max-width: 750px;
-
-        font-size: 16px;
-
-        line-height: 1.8;
-    }
-
-
-    /* ================= SKILLS ================= */
-
-    .skills-section {
-        max-width: 1200px;
-
-        margin: 8% auto;
-
-        padding: 0 40px;
-    }
-
-    .skills-section .title-section {
-        font-size: 30px;
-    }
-
-    .skills-section .skills-container {
-        width: 100%;
-
-        max-width: 1000px;
-
-        grid-template-columns:
-            repeat(3, 1fr);
-
-        gap: 30px;
-    }
-
-    .skills-section .skills-container .card-one,
-    .skills-section .skills-container .card-two,
-    .skills-section .skills-container .card-three {
-        min-height: 280px;
-    }
-
-    .skills-section .skills-container .cardOne-title,
-    .skills-section .skills-container .cardTwo-title,
-    .skills-section .skills-container .cardThree-title {
-        font-size: 20px;
-    }
-
-    .skills-section .skills-container .cardOne-desc,
-    .skills-section .skills-container .cardTwo-desc,
-    .skills-section .skills-container .cardThree-desc {
-        font-size: 14px;
-    }
-
-
-    /* ================= PROJECTS ================= */
-
-    .project-section {
-        max-width: 1200px;
-
-        margin: 8% auto;
-
-        padding: 0 40px;
-    }
-
-    .project-section .section-title {
-        font-size: 30px;
-    }
-
-    .project-section .cards-container {
-        width: 100%;
-
-        max-width: 1000px;
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap: 35px;
-
-        align-items: stretch;
-    }
-
-
-    /* Same height for all cards */
-
-    .project-section .cards-container div {
-        width: 100%;
-
-        max-width: none;
-
-        min-height: 500px;
-
-        height: 100%;
-
-        justify-content: flex-start;
-    }
-
-
-    /* Same image height */
-
-    .project-section .cards-container div img {
-        width: 100%;
-
-        height: 220px;
-
-        object-fit: cover;
-
-        margin: 0 0 15px;
-    }
-
-
-    .project-section .cards-container div h3 {
-        font-size: 20px;
-    }
-
-    .project-section .cards-container div p {
-        font-size: 14px;
-
-        line-height: 1.7;
-
-        flex: 1;
-    }
-
-
-    /* ================= CONTACT ================= */
-
-    .contact-section {
-        max-width: 900px;
-
-        margin: 8% auto;
-
-        padding: 0 40px;
-    }
-
-    .contact-section h2 {
-        font-size: 30px;
-    }
-
-    .contact-section p {
-        max-width: 700px;
-
-        font-size: 16px;
-
-        line-height: 1.8;
-    }
-
-    .contact-section a {
-        font-size: 35px;
-    }
-
-
-    /* ================= FOOTER ================= */
-
-    .footer-section .footer-container {
-        max-width: 900px;
-
-        padding: 20px 0 30px;
-    }
-
-    .footer-section .footer-container h3 {
-        font-size: 24px;
-    }
-
-    .footer-section .footer-container p {
-        font-size: 16px;
-    }
-
-    .footer-section .footer-container .links-container {
-        gap: 20px;
-    }
-
-    .footer-section .footer-container .links-container i {
-        font-size: 25px;
-    }
-}
-
-
-/* =========================================================
-   LARGE DESKTOP
-   1200px+
-========================================================= */
-
-@media (min-width: 1200px) {
-
-    /* ================= NAVBAR ================= */
-
-    .navbar {
-        padding: 10px 80px;
-    }
-
-    .desktop-nav {
-        gap: 35px;
-    }
-
-    .desktop-nav a {
-        font-size: 16px;
-    }
-
-
-    /* ================= HERO ================= */
-
-    .hero-section {
-        max-width: 1300px;
-
-        padding: 80px 70px;
-
-        grid-template-columns:
-            1.1fr 0.9fr;
-
-        gap: 100px;
-    }
-
-    .hero-section .text-div .main-title {
-        font-size: 45px;
-    }
-
-    .hero-section .text-div .sub-title {
-        font-size: 24px;
-    }
-
-    .hero-section .text-div .sub-title .highlight {
-        font-size: 30px;
-    }
-
-    .hero-section .text-div .hero-paragraph {
-        font-size: 17px;
-
-        max-width: 600px;
-    }
-
-    .hero-section .myImage-div {
-        max-width: 500px;
-    }
-
-
-    /* ================= ABOUT ================= */
-
-    .about-section {
-        max-width: 1100px;
-    }
-
-    .about-section .about-title {
-        font-size: 32px;
-    }
-
-    .about-section .about-paragraph {
-        max-width: 850px;
-
-        font-size: 17px;
-    }
-
-
-    /* ================= SKILLS ================= */
-
-    .skills-section {
-        max-width: 1300px;
-    }
-
-    .skills-section .skills-container {
-        max-width: 1100px;
-
-        gap: 40px;
-    }
-
-
-    /* ================= PROJECTS ================= */
-
-    .project-section {
-        max-width: 1300px;
-    }
-
-    .project-section .cards-container {
-        max-width: 1100px;
-
-        gap: 40px;
-    }
-
-    .project-section .cards-container div {
-        min-height: 520px;
-    }
-
-    .project-section .cards-container div img {
-        height: 240px;
-    }
-
-
-    /* ================= CONTACT ================= */
-
-    .contact-section {
-        max-width: 1000px;
-    }
-
-    .contact-section p {
-        max-width: 800px;
-
-        font-size: 17px;
-    }
-}
-
-
-/* =========================================================
-   EXTRA LARGE DESKTOP
-   1500px+
-========================================================= */
-
-@media (min-width: 1500px) {
-
-    .navbar {
-        padding: 10px 120px;
-    }
-
-    .desktop-nav {
-        gap: 40px;
-    }
-
-    .desktop-nav a {
-        font-size: 17px;
-    }
-
-    .hero-section {
-        max-width: 1400px;
-    }
-
-    .skills-section,
-    .project-section {
-        max-width: 1400px;
-    }
-}
-
-/* Mobile */
-.desktop-nav {
-    display: none;
-}
-
-.nav-button {
-    display: block;
-}
-
-/* Desktop */
-@media (min-width: 900px) {
-
     .nav-button {
         display: none;
     }
-
-    .desktop-nav {
-        display: flex;
+    .about-section .about-title {
+        font-size: 25px;
     }
+    .about-section .about-paragraph{
+        font-size: 16px;
+        max-width: 700px;
+    }
+    .skills-section .title-section {
+    font-size:25px;
+    }
+    .skills-section .skills-container {
+    width:80%;
+    display:flex;
+    flex-direction: row;
+    align-items:stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:40px;
+    margin:30px 0;
+    }
+    .skills-section .skills-container .card-one,
+    .skills-section .skills-container .card-two,
+    .skills-section .skills-container .card-three {
+    width:45%;
+    padding:20px 16px;
+    }
+
+.skills-section .skills-container .card-one .fa-brands.fa-html5,
+.skills-section .skills-container .card-two .fa-brands.fa-css3-alt,
+.skills-section .skills-container .card-three .fa-brands.fa-square-js {
+    font-size: 60px;
+    padding:10px 0;
 }
 
-
+.skills-section .skills-container .cardOne-title,
+.skills-section .skills-container .cardTwo-title,
+.skills-section .skills-container .cardThree-title {
+    font-size: 20px;
+    padding: 15px 0;
+    }
+    .skills-section .skills-container .cardOne-desc,
+    .skills-section .skills-container .cardTwo-desc,
+    .skills-section .skills-container .cardThree-desc {
+    font-size: 15px;
+    padding:8px;
+    }
+    .project-section .section-title {
+    font-size:25px;
+    }
+    .project-section .cards-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:20px;   
+    }
+    .project-section .cards-container div {
+    width: 45%;
+    padding:15px 25px;
+    }
+    .project-section .cards-container div h3 {
+    font-size: 20px;
+    }
+    .project-section .cards-container div p {
+    font-size: 15px;
+    }
+    .project-section .cards-container div button {
+    width:200px;
+    }
+    .contact-section h2 {
+    font-size:25px;
+    }
+    .contact-section p {
+    max-width:650px;
+    font-size:16px;
+    }
+    .contact-section .email-container {
+    width: 250px;
+    }
+    .contact-section .email-container a {
+    font-size: 18px;
+    }
+    .footer-section .footer-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 800px;  
+        font-size: 13px;
+        gap: 16px;
+    }   
+}
+@media (min-width:993px){
+    .hero-section {
+    display:flex;
+    gap:14px;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:center;
+    padding:40px 10px;
+    }
+    .navbar .fa-solid.fa-laptop-code {
+    font-size: 30px;
+    color: #131719;
+    cursor: pointer;
+    display: block;
+    }
+    .hero-section .text-div {
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    justify-content:center;
+    align-items:center;
+    }
+    .hero-section .text-div .main-title {
+    font-size:30px;
+    }
+    .hero-section .text-div .sub-title {
+    font-size:24px;
+    }
+    .hero-section .text-div .sub-title .highlight {
+    font-size:26px;
+    }
+    .hero-section .text-div .hero-paragraph {
+    max-width:700px;
+    font-size:20px;
+    }
+    .hero-section .myImage-div {
+    width:35%;
+    max-width:350px;
+    }
+    .hero-section .myImage-div .my-image {
+        width: 100%;
+    }
+    .hero-section .view-button {
+        width: 300px;
+        font-size: 20px;
+    }
+    .desktop-nav {
+        display: flex;
+        margin: auto;
+    }
+    .desktop-nav a {
+    margin: 0 25px;
+    font-size: 20px;
+    }
+    .nav-button {
+        display: none;
+    }
+    .about-section .about-title {
+        font-size: 28px;
+    }
+    .about-section .about-paragraph{
+        font-size: 20px;
+        max-width: 700px;
+    }
+    .skills-section .title-section {
+    font-size:28px;
+    }
+    .skills-section .skills-container {
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    align-items:stretch;
+    justify-content: center;
+    gap:17px;
+    margin:30px 0;
+    }
+    .skills-section .skills-container .card-one,
+    .skills-section .skills-container .card-two,
+    .skills-section .skills-container .card-three {
+    width:30%;
+    padding:20px 20px;
+    }
+    .skills-section .skills-container .card-one .fa-brands.fa-html5,
+    .skills-section .skills-container .card-two .fa-brands.fa-css3-alt,
+    .skills-section .skills-container .card-three .fa-brands.fa-square-js {
+    font-size: 60px;
+    padding:10px 0;
+    }
+    .skills-section .skills-container .cardOne-title,
+    .skills-section .skills-container .cardTwo-title,
+    .skills-section .skills-container .cardThree-title {
+    font-size: 24px;
+    padding: 15px 0;
+    }
+    .skills-section .skills-container .cardOne-desc,
+    .skills-section .skills-container .cardTwo-desc,
+    .skills-section .skills-container .cardThree-desc {
+    font-size: 18px;
+    padding:8px;
+    }
+    .project-section .section-title {
+    font-size:28px;
+    }
+    .project-section .cards-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:50px;   
+    }
+    .project-section .cards-container div {
+    max-width: 35%;
+    padding:10px 25px;
+    }
+    .project-section .cards-container div h3 {
+    font-size: 24px;
+    padding: 8px;
+    }
+    .project-section .cards-container div p {
+    font-size: 18px;
+    }
+    .project-section .cards-container div button {
+    width:200px;
+    font-size: 16px;
+    }
+    .contact-section h2 {
+    font-size:28px;
+    }
+    .contact-section p {
+    max-width:650px;
+    font-size:18px;
+    }
+    .contact-section .email-container {
+    width: 350px;
+    }
+    .contact-section .email-container a {
+    font-size: 18px;
+    }
+    .footer-section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #030f17;
+    }
+    .footer-section .footer-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 1000px;  
+    }   
+    .footer-section .footer-container h3 {
+        font-size: 21px;
+    }
+    .footer-section .footer-container p {
+        font-size: 17px;
+        margin: 10px 0;
+    }
+    .footer-section .footer-container .links-container i {
+    font-size: 25px;
+    }
+    .footer-section .footer-container small {
+    font-size: 15px;
+    } 
+}
 
 
 
