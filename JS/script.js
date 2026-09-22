@@ -139,7 +139,7 @@ myImageDiv.classList.add("myImage-div");
 let myImage = document.createElement("img");
 myImage.classList.add("my-image");
 myImageDiv.appendChild(myImage);
-myImage.src = "../Images/hero-image.jpeg";
+myImage.src = "Images/hero-image.png";
 myImage.alt = "Amal Alawadi Front-End Developer";
 let viewButton  = document.createElement("button");
 viewButton.classList.add("view-button");
