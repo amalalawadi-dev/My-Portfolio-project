@@ -288,7 +288,7 @@ cardsProjectsContainer.appendChild(cardProjectTwo);
 let cardProjectThree = document.createElement("div");
 let projectThreeImage = document.createElement("img");
 projectThreeImage.src = "Images/card3-Image.png";
-projectThreeImage.alt = "Secured Easy Server Landing Page Project";
+projectThreeImage.alt = "MediTech-Academy Platform";
 let projectThreeTitle = document.createElement("h3");
 let projectThreeTitleContent = document.createTextNode("MediTech-Academy Platform");
 projectThreeTitle.appendChild(projectThreeTitleContent);
