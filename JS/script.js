@@ -306,9 +306,6 @@ cardProjectThree.appendChild(projectThreeTitle);
 cardProjectThree.appendChild(projectThreeDesc);
 cardProjectThree.appendChild(projectThreeButton);
 cardsProjectsContainer.appendChild(cardProjectThree);
-//
-
-
 projectsSection.appendChild(projectsSectionTitle);
 projectsSection.appendChild(cardsProjectsContainer);
 document.body.appendChild(projectsSection);
