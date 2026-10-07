@@ -284,6 +284,31 @@ cardProjectTwo.appendChild(projectTwoTitle);
 cardProjectTwo.appendChild(projectTwoDesc);
 cardProjectTwo.appendChild(projectTwoButton);
 cardsProjectsContainer.appendChild(cardProjectTwo);
+// card 3
+let cardProjectThree = document.createElement("div");
+let projectThreeImage = document.createElement("img");
+projectThreeImage.src = "Images/card3-Image.png";
+projectThreeImage.alt = "Secured Easy Server Landing Page Project";
+let projectThreeTitle = document.createElement("h3");
+let projectThreeTitleContent = document.createTextNode("MediTech-Academy Platform");
+projectThreeTitle.appendChild(projectThreeTitleContent);
+let projectThreeDesc = document.createElement("p");
+let projectThreeDescContent = document.createTextNode("Developed an educational platform for medical devices with detailed descriptions, images, and introductory videos, including free and subscription-based content.");
+projectThreeDesc.appendChild(projectThreeDescContent);
+let projectThreeButton = document.createElement("button");
+let projectThreeButtonContent = document.createTextNode("View Project");
+projectThreeButton.appendChild(projectThreeButtonContent);
+projectThreeButton.onclick = function(){
+    location.href = "https://github.com/amalalawadi-dev/MediTech-Academy";
+}
+cardProjectThree.appendChild(projectThreeImage);
+cardProjectThree.appendChild(projectThreeTitle);
+cardProjectThree.appendChild(projectThreeDesc);
+cardProjectThree.appendChild(projectThreeButton);
+cardsProjectsContainer.appendChild(cardProjectThree);
+//
+
+
 projectsSection.appendChild(projectsSectionTitle);
 projectsSection.appendChild(cardsProjectsContainer);
 document.body.appendChild(projectsSection);
